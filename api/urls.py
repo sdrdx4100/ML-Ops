@@ -11,6 +11,7 @@ router.register(r'fields', views.DataFieldViewSet)
 router.register(r'datasets', views.DatasetViewSet)
 router.register(r'dataset-files', views.DatasetFileViewSet)
 router.register(r'dataset-profiles', views.DatasetProfileViewSet)
+router.register(r'audit-logs', views.AuditLogViewSet)
 
 # Analysis endpoints
 router.register(r'analysis-templates', views.AnalysisTemplateViewSet)
