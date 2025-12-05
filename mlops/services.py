@@ -11,7 +11,7 @@ from django.conf import settings
 from django.contrib.auth import get_user_model
 
 from .models import MLModel, MLModelVersion, MLTrainingRun
-from core.models import Dataset
+from core.models import Dataset, Tag
 from core.services import create_audit_log
 
 User = get_user_model()
@@ -183,7 +183,6 @@ def predict(
         ).first()
     elif tag_name:
         # Find default ready model for this tag
-        from core.models import Tag
         tag = Tag.objects.filter(name=tag_name).first()
         if tag:
             model = MLModel.objects.filter(tag=tag, is_active=True).first()
